@@ -4,6 +4,12 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// this import works with `node_modules` linker
+import { takeEvery } from 'redux-saga/effects';
+export function* test() {
+  yield takeEvery('*', (action: any) => console.log(action));
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
